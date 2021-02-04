@@ -1,0 +1,32 @@
+We would like to thank the reviewers for their insightful comments and suggestions, and are certainly pleased to see that the 3 reviewers and the meta-reviewer all found this work interesting and with potential for the community. We address hereafter the points which were unclear, along with corresponding changes that we will implement in the final version of the paper. As these changes do not require any new data or analysis, we can implement them rapidly.
+
+
+Nature of the study
+[R2,3,4] The major concerns raised by the reviewers are related to our study. We inappropriately used the term “large-scale study” in the sense of an ecologically-valid study, run in schools with a meaningful number of children (50 in total), and with an actual educative task (learning about food chains) that included non-trivial social interactions (such as providing timely encouragements or hints). To better reflect this, we will replace "large-scale study" by "ecologically-valid study" in the paper.
+
+We would, however, like to highlight the complexity of this study. The robot learns a tutoring policy in a complex and high dimensional environment (210 continuous multimodal input dimensions and more than 600 available actions). Furthermore, incorrect actions can confuse or frustrate our young users. While the task looks like a simple game, learning a valid tutoring behaviour in real-time is a challenge. Consequently, we believe it is representative of many tasks explored in HRI and is a valuable case study to demonstrate the value of our method. The text will be edited to reflect this.
+
+Finally, as a method paper, we mainly used the study as a support example of WoZ++, showing how researchers can effectively incorporate WoZ++ into their HRI applications. Space constraints prevent us from presenting the study in full detail. We will edit section III, and especially III.D, to communicate this better. In addition, we will add a reference the full study pre-print (currently not done to maintain anonymity).
+
+
+Scope of the paper
+[R2,3,4] We do acknowledge that not all claims made in the paper are supported by our study data, we will distinguish between evidence-based and speculative claims. We will also make clear for which tasks WoZ++ can be applied (for example, when actions are predefined and a human knows the expected robot’s behaviour), how it contributes to the community (both theoretically and practically) and what are the specific considerations when applying it to a new task (thus updating and grounding Table III).
+
+
+Role of the wizard
+[R4] R4 asked who the wizard is: as primarily a tool for researchers, the wizard is typically the researcher her/himself. However, it does not have to be the case, and the wizard can also be a therapist, a teacher, or a user from the general public, depending on the task and scenario. We will clarify this early on in the paper.
+
+
+Algorithm
+[R1,3,4] The algorithm used in the case study is only one possible implementation of the learning component for WoZ++. Memory usage is not a problem for weighted KNN in our case (currently 3MB is needed). The main advantage of wKNN over classical KNN is that wKNN does generalise well from only a few samples even in large state spaces, allowing for an early return in online learning. Additionally, this type of instance-based algorithm is fairly robust to inconsistent demonstrations as each point will only have influence in a limited part of the space. We will add this clarification to the text.
+
+
+Prior work and contribution
+[R1,2,3,4] The paper by Sequeira et al. is already referenced, but we will make the comparison clearer. We will also reference other work the reviewers found relevant. Similar to Sequeira et al., WoZ++ is a general methodology and is not algorithm specific. Depending on the application, different ML implementations can be used as the learning component. The ML approach presented is only one of many, and while our teacher had an unconstrained view of the interaction in the study, it would be possible to combine WoZ++ with the limited perception approach proposed in the Sequeira et al. paper. We will make make this clear.
+
+
+Importance of the online learning
+The online learning method described in our paper offers a number of advantages, these will be made more explicit. Where claims are speculative, this will be made clear.
+- [R1] it allows for a smooth transition from control, to monitoring to full autonomy if desired. The role of the teacher changes gradually, and we suggest that this leads to better situational awareness than an abrupt switch between demonstrating and monitoring.
+- [R1,3] As the teacher is always in control of the robot’s actions, wrong actions by the algorithms will have limited impact. They would only require a limited effort by the teacher to correct. In our non-trivial example the autonomous deployment was a success.
+- [R1,2,3,4] WoZ++ is a radical change compared to methods based on demonstrations (such as Sequeira et al.) which separate data collection and use, and require significant engineering between the two - limiting their use by non-technical users. WoZ++ does not separate demonstration and exploitation, and the robot will gradually become more autonomous while deployed in the field, allowing WoZ++ to be fully used by non-technical users once the initial design step is completed.

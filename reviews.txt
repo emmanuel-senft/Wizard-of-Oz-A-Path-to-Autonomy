@@ -1,0 +1,254 @@
+Reviewer 4 (AC)
+Meta Review
+
+The paper presents research on an interesting topic (the Wizard-of-Oz, WoZ), and proposes a new approach on the WoZ-role in the research and development of Human-Robot Interaction. Progress on this topic would provide a key contribution to the HRI community, and may help the introduction and implementation of robots in the field. An evolutionary approach is taken, based on Interactive Machine Learning (IML). WoZ++ is presented: A machine learning framework that learns policies real-time from a human wizard operating a robot that is interacting with a human user. The goal is to gradually transfer tasks (“autonomy”) from the wizard to the robot. Overall, the paper presents an actual topic and approach, with some interesting ingredients (e.g. on the IML, exemplified with pseudo-code, as indicated by the first reviewer).
+Unfortunately, the scope of the paper is not completely clear. It presents an evolution of the WoZ-methodology, large claims and mentions a large-scale study, whereas the underlying vision and actual empirical work is not presented coherently and put in perspective of other research and developments in this area (all reviewers mention some aspects of this shortcoming).
+
+Concerning the vision, it is not well stated who the Wizard is and what the role of the Wizard is (e.g., software developer, investigator, teacher, coach, ….?). The learning process should be attuned to this role. For what kind of scenarios, is the WoZ++ framework effective? The authors should be more modest in their conclusion as their case study, in which they tested the method, is rather simple (reviewer 2 and 3).
+Workload reduction of the Wizard is mentioned as an important issue. It can be relevant indeed, but this might not be the main goal (see comment reviewer 1). Research on adaptive automation shows the complexity (e.g. relevance of context, user’s experience, …) to address workload adequately.
+The paper lacks some references to relevant research. It would be good to position the work better, given the broad claims, in the scientific field. Reviewer 2 provides some suggestions; and reviewer 3 also one. Of direct relevance are (from HRI conference, and one before…):
+Sequeira, P., Alves-Oliveira, P., Ribeiro, T., Di Tullio, E., Petisca, S., Melo, F. S., Castellano, G. & Paiva, A. (2016, March). Discovering social interaction strategies for robots from restricted-perception Wizard-of-Oz studies. In Human-Robot Interaction (HRI), 2016 11th ACM/IEEE International Conference on (pp. 197-204). IEEE.
+
+Maulsby, D., Greenberg, S., & Mander, R. (1993, May). Prototyping an intelligent agent through Wizard of Oz. In Proceedings of the INTERACT'93 and CHI'93 conference on Human factors in computing systems (pp. 277-284). ACM.
+
+Concerning the IML: bidirectional communication in this learning paradigm between wizard (teacher) and robot (learner) is really interesting, but details about the (choices) of the learning algorithm are lacking. The choices have some consequences (as mentioned by reviewer 3, e.g., “what if the wizard is not consistent in giving the same features for similar states and actions”), which should be addressed.
+In conclusion, the paper discusses relevant research, but insufficiently provides the grounding. The required information might be available (the abstract mentions “full details […] are available”), but the paper needs substantial adaptation and refinement to scope the claims and provide adequate justifications of these claims. For a conference, the time is too short to guarantee such a substantial adjustment of the paper content.
+
+POST-REBUTTAL COMMENTS: The authors give a thoughtful rebuttal, showing that they understand reviewers' comments, and that they can nuance some claims and findings, give some better explanations and provide additional references. Concerning the provision of detail of the study in section III, they propose to "add a reference the full study pre-print". However, including this information in the submitted paper is needed to justify the claims of the paper (so far, it is not clear how the submitted paper relates to this pre-print).
+
+-------------------------------------------------------------------------------
+
+PC-MEETING CONCLUSION:
+
+The paper has been discussed extensively at the PC-meeting. The Wizard-of-Oz++ method was recognized as relevant, providing a very promising approach to advance the WoZ practices in the HRI community. However, the paper needs substantial improvements on many issues, as brought forward by the reviewers. Therefore, the paper has been rejected for HRI2019. However, we would like to stress that the topic and approach are really interesting, and hope that a WoZ++ paper will be submitted next year. We recommend to focus the paper better, explicate a clear deliniated research objective with accompanying test use case (paying attention to the "HumanWizard"-robot interaction), and provide a conclusion on this research objective. There seems to be already good material available for such a paper.
+Recommendation
+Probably reject: I would argue for rejecting this paper.
+
+-------------------------------------------------------------------------------
+
+Reviewer 5 (2AC)
+Secondary Meta Review
+The study of new approaches to implementing the WoZ is an important topic for HRI scholars. This paper presents a new approach to implementing the WoZ. The reviewer scores and comments, with the exception of R3, were consistent. The rebuttal demonstrated that the authors understood the core issues. Most members of the review panel and myself included believe this would require another round of revisions. Unfortunately, if possible, the effort needed to fully address these issues does not fit within the timeline of the conference. We hope that the authors will continue to work on this paper and consider submitting a new version or paper to the next HRI conference.
+Recommendation
+Probably reject: I would argue for rejecting this paper.
+
+-------------------------------------------------------------------------------
+
+Reviewer 1 (reviewer)
+Contribution
+I believe that the authors wish to introduce a new Wizard of Oz framework within HRI, where the robot learns in real-time from the wizard while interacting with a participant. With additional properties that allow for faster learning, such as allowing the robot to communicate what it thinks is a good action and what in the state space made it propose this action. All with a learning algorithm that does not require expert knowledge in that very algorithm. This all to improve WoZ studies through 'real HRI' and not 'human-human interaction', allow for replicability and allow for the development of full autonomous robots (as stated by Riek).
+
+The authors claim something very similar, with the small exception of addressing the 'real HRI' part. Which, is also partly solved, by the method (as autonomy can be allowed to increase during an experiment or usage).
+
+What may be addressed a bit more clearer is that the method is both for HRI experiments as well as for actual use. It is stated fairly often that the users of the methods are either HRI researchers or actual teachers/therapists/workers. However, this can be stated more explicitly in the introduction.
+Detailed Review
+The authors propose a framework of how WoZ in HRI can be improved such that it results in autonomous and effective robots as well as improving the empirical studies conducted through WoZ. The framework builds upon the idea of using actual real-time learning from the wizard's actions in specific states as a means to obtain an (eventual) autonomous robot. The authors acknowledge the need of bidirectional communication in this learning paradigm between wizard (teacher) and robot (learner) and allows the robot to propose actions for itself and force the wizard to signal what state features were believed vital in his/her action choice. This allows the wizard to validate the learned policy as well as speed up learning. An algorithm based on weighted kNN was proposed that compares states on only a subset of the full state's features as signaled by the wizard. The main contribution of this work is the vision of real-time learning with mixed-initiative communication between wizard and robot in WoZ experiments and use cases.
+
+The paper is well written, easy to understand and conveys its message clearly. Also, its writing style and structure introduces the problem in an accessible manner and invites the reader to think of a solution him- or herself. Given that the authors main goal is to alter the way WoZ is used in the field of HRI, this is a major strength of the paper.
+
+Another major strength of this research is the overall view taken; they address a number of problems and introduce a nearly complete framework to solve these whose elements are solidly based on previous work. The authors also offer an extensive discussion of the problems with this framework and how they might be solved or mitigated.
+
+The above strengths are also its main weaknesses; most aspects of the full framework are not appropriately addressed in full detail (eg. suited learning algorithms, interface elements, expected effects of experimental design choices, learning as a confound on experiments). However, the authors clearly intend this paper as a vision of how WoZ can be improved upon and point the reader to interesting and inspiring ideas of how WoZ can be further utilized.
+
+One of the made statements is that the proposed framework reduces the wizards workload as autonomy improves but who can still step in at any time. This may be the case, but how likely is it that a robot is allowed to act fully unsupervised? Also, if the wizard does switch from a control task towards a monitoring task, how well will the wizard be able to correct the robot? I believe that this is a potential major problem not addressed in the paper. Both from a loss in situational awareness perspective as well as the wizard having no expert knowledge about the actual learning algorithm (e.g. how would the wizard correct a behavior that is caused by the algorithm and not the data?).
+
+It is often stated that the framework can be used with a limited interface for the wizard to allow correct correspondence between states and taught actions. However, from figure 5 it is clear that in the experiment to validate the method this is not done. I miss the argument for this design choice.
+
+Finally, I would suggest to describe the used algorithm in more detail. It is briefly introduced in a few sentences and clear pseudo-code is given. But clear argumentation misses why this algorithm is chosen, except that it is a case-based algorithm of which is stated that these learn in an online manner. The Nearest Neighbour algorithm is briefly introduced as a typical case-based learning algorithm but quickly rejected due to its memory demands. However, the proposed algorithm is a weighted form of Nearest Neighbour where only the state features are stored that are identified by the wizard. This introduces a number of questions: What if the wizard is not consistent in giving the same features for similar states and actions, how are these then compared? How well does this reduced storage mitigate the memory issue? Does this indeed increase learning speed over Nearest Neighbours?
+
+Given the above, my recommendation is neither to accept nor reject the paper. I am truly in doubt. It is well written, inspirational and has a great balance between vision and implementation. However, it lacks some in-depth detail of several key design choices in this framework; choices in learning algorithms, proven benefits of this bidirectional communication, the statement of added transparency due to online learning, shift from wizard control to robot autonomy and how online learning actually reduces the need of developing an effective learning algorithm. Such as the setting of hyper parameters, reward scaling, real-time data cleaning.
+
+POST-REBUTTAL COMMENTS:
+The authors gave an adequate response to my comments. They addressed several issues, such as making some references more clear, soften or motivate some claims, as well as providing a more detailed explanation of some of the method's aspects. All of which will improve the paper. However, my greatest concern is still a lack of sufficient detail in the algorithmic choices and expected reduction in cognitive strain on the wizard.
+
+I still have doubts whether this method reduces the cognitive strain needed by the wizard compared to regular WoZ experiments/teaching. Changing this claim to a more speculative one, will only make it more clearer to a reader that one of the main drives for WoZ++ is not yet validated.
+
+The rebuttal addresses a number of comments regarding the algorithm. These are that 1) wKNN is able to generalize better than KNN, 2) that wKNN is robust to inconsistent labels in the feature space and 3) that wKNN with the wizard's guided feature selection reduces memory usage. However, statement 1 is indeed true but inconsistent with statement 2; wKNN is better in generalizing at the start of learning compared to KNN but this makes the algorithm also highly influential to inconsistent labeling. Finally, statement 3 sounds conflicted to me with what is stated in the pre-print. For me it is still unclear whether the authors intend to add an argumentation of how the proposed form of wKNN makes it more scaleable than KNN and what different algorithms are also available.
+
+I believe that these changes combined with those proposed by the authors in the rebuttal are doable and well within the scope of this study. However, it is also my opinion that the paper will benefit from an additional reviewing after these changes which caused me to adjust my rating. I would encourage the authors to submit their work for next HRI conference as the work is interesting as well as inspirational.
+Overall Rating
+Probably reject: I would argue for rejecting this paper.
+
+-------------------------------------------------------------------------------
+
+Reviewer 2 (reviewer)
+Contribution
+a) The authors present the ideas behind a novel approach, called WoZ++, for working towards autonomous human-robot interaction. WoZ++ is a machine learning framework that learns policies online from a human wizard operating a robot that is interacting with a human user. The goal is to gradually transfer autonomy from the wizard to the robot.
+
+The authors only presents the ideas and concepts of WoZ++ and minimally go over an initial case study.
+
+b) The authors claim that their methodology avoids the usual pitfalls of offline learning and they present a large-scale study where this methodology is deployed. They furthermore claim that they show that in relatively high-dimensional problems “the robot learns remarkably quickly a satisfactory autonomous policy, that includes precise action timing and social elements.”
+
+c) The claimed contribution and key-findings of the authors and the perceived contribution by the reviewer do not align at all. The reviewer especially misses the “large-scale study” and the link between the made claims, e.g. about avoiding the pitfalls, and the results from that study.
+Detailed Review
+1. Summary
+The authors present the ideas behind a novel approach, called WoZ++, for creating human-robot interactions. WoZ++ is a machine learning framework that learns policies online from a human wizard operating a robot that is interacting with a human user. The goal is to gradually transfer autonomy from the wizard to the robot.
+
+The authors first introduce the idea of WoZ++, then they discuss some key-concepts of the system that also briefly mentions a user-study. They display four graphs showing some data, but provide little to none discussion about the results. This is followed by an overview of opportunities and challenges of using a system like WoZ++ (without any link to the results or a solid foundation otherwise).
+
+2. Strengths and Weaknesses
+Strengths
+* The core ideas behind WoZ++ are very interesting and promising.
+
+Weaknesses
+* The authors promise a large scale study in the abstract. The reviewer has different expectations from what was delivered by the authors.
+* A significant number of claims made in this paper, about the WoZ++ system and otherwise, are not defended by clear and sound arguments, a systematic data collection strategy, supporting data, and/or a thorough reflective analysis of the research with respect to the existing state of the art.
+
+3. Detailed Comments
+Strengths
+The core ideas behind WoZ++ are very interesting and promising, especially doing online learning from a wizard, using meta-feedback about the state space from the wizard to improve learning, and gradually transfer autonomy from the wizard to the robot.
+
+Weaknesses
+* The authors promise a large scale study in the abstract. The reviewer has different expectations from what was delivered by the authors. Hopefully, the following points will help the authors to understand where the mismatch comes from and subsequently help to fix the issues.
+- Usually, a large-scale study refers to the amount of participants relative to the study design. 2 times 25 participants is generally not considered large-scale. For an initial evaluation it is appropriate, but it should not be called large-scale.
+- Usually, a large-scale (or any size) user study is properly introduced and discussed in a paper. This includes a research question (and hypotheses), a method section discussing the used methods to set-up, perform, and evaluate the user study, a results sections explicitly presenting the results, and an appropriate amount of the discussion section discussing the results and reflecting back on results, implementation, and initial ideas/scientific concepts. These elements are all missing and definitely need to be added.
+- Because the user study is presented as an important element of this paper, the reviewer expected the discussion points and drawn conclusions to be directly linked to the results of the user study. None of the opportunities, challenges, and recommendations made at the end of the paper seem to be linked to the results of the study. The paper would be stronger if these connections were made more explicitly.
+
+* A significant number of claims made in this paper, about the WoZ++ system and otherwise, are not defended by clear and sound arguments, a systematic data collection strategy, supporting data, and/or a thorough reflective analysis of the research with respect to the existing state of the art.
+
+This paper is submitted to the ‘Theory and Methods in Human-Robot Interaction’ where proper justification of the proposed theories or methods are essential. Especially in the discussion section, where the authors sum up opportunities, challenges, and recommendations a solid justification is lacking. This can be improved by linking these elements to the results, as suggested in the previous point.
+
+Furthermore, besides data the authors could look at the existing state of the art more as a comparison. They did this only minimally. The opportunities, challenges, and recommendations themselves are general and are not unique to only the WoZ++ system. The paper would be stronger if the authors highlight the unique qualities of their system more accompanied by solid evidence.
+
+Finally, when giving out recommendations the reviewer expects a solid foundation in the form of an extensive literary survey or large-scale study. Since it’s too early for the authors at this point the reviewer suggests refraining from giving out recommendations.
+
+4. Suggestions for Improvement
+Abstract
+* “[…] learn the wizard[‘s] latent policy;”
+* “[…] avoids the usual pitfall[s] of […]” -> if there is only 1 pitfall it would be better to directly state that pitfall.
+* “by fully embedding the robot learning process into the target interaction” -> too vaguely formulated.
+* The index terms have a mixed set of capitalization.
+
+I. Introduction
+* “Studying social interaction […] physical injuries” -> these are pretty strong claims, especially in the context of social interactions. A reference, or an example, would make this part stronger.
+
+* “Based on these […] in final products” -> it’s quite a stretch to claim that only these three properties will lead to effective interactions for the whole of HRI. Furthermore, you seem to base these properties only on your own speculations of what HRI should be. To improve this a) these properties should be accompanied by a solid foundation (survey of previous work, clear and sound argumentation, or your own experimental data and b) each property should directly be linked to that foundation.
+
+Extracting these properties from a number of survey papers would be a more appropriate approach. For example, you can take a look at:
+More recent:
+- Sheridan, T. B. (2016). Human–robot interaction: status and challenges. Human factors, 58(4), 525-532.
+- Lasota, P. A., Fong, T., & Shah, J. A. (2017). A survey of methods for safe human-robot interaction. Foundations and Trends® in Robotics, 5(4), 261-349.
+Classics:
+- Goodrich, M. A., & Schultz, A. C. (2008). Human–robot interaction: a survey. Foundations and Trends® in Human–Computer Interaction, 1(3), 203-275.
+- Steinfeld, A., Fong, T., Kaber, D., Lewis, M., Scholtz, J., Schultz, A., & Goodrich, M. (2006, March). Common metrics for human-robot interaction. In Proceedings of the 1st ACM SIGCHI/SIGART conference on Human-robot interaction (pp. 33-40). ACM.
+
+* “The behavior of a social robot […] achieve its goal” -> I agree that a social robot should behave appropriately, but the way the authors defined it they could capture all concepts under that label. Safely is appropriately, but adaptive and autonomous are also appropriately. I would consider safety a separate category, as well as achieving a goal (e.g. effectively). Then you could scale down appropriately to social appropriately (which I expected it to be in the first place since you are explicitly defining properties of social robots). Social appropriately has more to do with the manner and content of how the robot responds to a user. A difficult feat to achieve and a main reason for using Wizard of Oz systems in the first place.
+
+* “robot’s behaviours needs to be believable” -> the behaviors of a robot need to be believable. Believable in what sense? If a robot operates autonomously, they are what they are, and believability is an odd concept that needs more explanation. I assume you mean in the context of a WoZ set-up? Do you mean that it is believable that they operate autonomously? In any case, this requires more explanation.
+
+* “Consequently, […] for these studies” -> I see what you are getting, but I would argue that it is not a matter for importance but a matter of incapability (of the current state-of-the-art). Because what HRI researcher wouldn’t want their robot to perform autonomously?
+
+* “It has since […] 2013 and 2015” -> rewrite sentence for clarity. This suggests that 61% of the robots do operate autonomously. Is that also the case?
+
+* “This allows to bypass” -> allows who?
+
+II. Interactive machine learning to support WoZ
+* “[…] number of steps[,] requiring significant engineering expertise[,] and thus […]”
+* “simple member of the general public -> I wouldn’t call a member of the general public simple.
+* The whole section A. Interactive Machine Learning is a but cluttered. The comparison with classical machine learning is interesting. This section would be more clear if the advantages and disadvantages of IML and CML would be separated and specified explicitly. Currently, they are mixed up together too much.
+
+* “[…] achieve the desired results […]” -> what are the desired results in this context. A possible running example would help clear things up as well.
+* “Additionally, the agent learning […]” -> what agent?
+*”[…] be actively involved in the process […]” -> how?
+* “in this context, […] for each demonstration.” -> this sentence is unclear.
+* “[…] enrich their selection/demonstration […]” -> enrich how?
+* “[…] receive information from the robot […]” -> what other information than they are already getting do they need to receive?
+* “These enriched […] faster and more precise” -> this repeats the previous statements but provides no additional information.
+* ”[…] (in similar fashion to [18], […]” -> It’s better to highlight the important content of a reference than to just refer to it without saying what you are using from that reference.
+* “On the other hand, […]” -> is this an opposite of the previous statement?
+* “[…] teaching process.” -> up until this point I believed your system would be a (passive) learning system rather than a teaching system. So this confused me. What teaching process?
+* “Additionally, the learning […] robot’s behavior” -> repeat of previous statement.
+
+* 3 represents and ideal […] autonomy, adaptivity and appropriateness.” -> what is the use / worth of the comparison of ideal situation if this is never going to look like this? For example, human wizards are not perfect (so adaptively and appropriateness fluctuates). The assumption that autonomy will be flawless doesn’t make sense. Where are you getting the idea from that the transfer of autonomy will be an exponential process? How will appropriateness and adaptive be operationalized? These are all big questions that are left unanswered / overlooked by presenting this model. The reviewer believes this model does more damage to the story than it does good.
+
+* “the wizard can easily step back […] refine the robot’s behavior” -> this is not in line with the model you presented a few sentences ago, adding to the confusion.
+
+III. Methodology
+* The reviewer expected a different kind of methodology (related to the large-scale study). -> adding WoZ++ to the section header to indicate you will be elaborating on the WoZ++ method.
+
+* “[…] take as [a] case study […]”
+* “Then, the input […] selected and implemented.” -> Here the authors clearly specify that an implementation step is necessary, while later they claim that people with no technical background can use their method without the need for implementation.
+* “algorithm needs [to] be applicable […]”
+* “[…] in a human timescale[] […]”
+* “ […] limited number of data[ ]point[s]”
+* “However, in the classical […]” -> unclear sentence
+* algorithm 1 is not explained in the text.
+* “[…] [g]raphical [u]ser [i]nterface running on […] sliding autonomy“ -> that the users will teach the robot while doing wizard of oz is not properly introduced up until here. This makes this again unexpected for the reader. Introducing the main mechanisms before going over them in detail would make the story more clear. I was expecting more of a looking over the shoulder tacking rather than an active teaching approach.
+
+* “The first key consideration when applying WoZ++ and the main focus of the paper is the interactive online learning: […]” -> this should be mentioned at the start of the paper. This is the first time I hear about it and were over halfway in the paper.
+
+* “In this study, the interaction was following SPARC […]” -> this brings about a number of important unanswered questions. How is WoZ++ different from SPARC? How does SPARC do it?
+
+* “[…] to ensure that it is constantly appropriate and adaptive […] -> humans cannot guarantee that. At the very least, this should be acknowledge of a limitation of the WoZ++ approach. Limitations are hardly discussed in this paper. This should be added as well.
+
+* “This is one of the main considerations […] similar level with one expressed using WoZ” -> I disagree, passively accepting a selected action is not as good as actively selecting an action. Humans will lose attention if they feel the system is taking care of stuff for them. See the self-driving car discussion.”
+
+* “[…] (such as animals or plants) and the controller […] -> who or what is the controller?
+
+* “[…] full teleoperation (such as WoZ)” -> now you seem to imply that WoZ is an example of full teleoperation, which obviously isn’t the case. You probably mean to say that just like regular WoZ, WoZ++ also has an autonomy scale.
+
+* “In the case study, […] did not do it either” -> These 3 paragraphs contain a mixture of results and discussion about the results of a small case study. This is not what I expected from a “large-scale study” in terms of size, scope, and presentation. See previous section for a more complete discussion of this issue.
+
+* “Despite some differences (e.g. [….]) -> are more thorough discussion is needed.
+
+* “the main differences was […] similar situations” -> I don’t agree with this conclusion. I wouldn’t call encouragement after a task was complete and congratulations before a task was complete to be appropriate behavior. This is far from similar to the wizard in that regard.
+
+IV. Discussion
+* “the human controller […] robot’s behavior” -> again, this isn’t the case (and not backed-up by your data).
+* “it besides addressed fundamental drawbacks of WoZ” -> this claim needs evidence.
+* “progressively gains a level of […] genuine human-robot interaction.” -> this claim needs evidence.
+
+* The reviewer feels the previous claims were presented as facts, following some clear evidence, without actually providing the evidence. Furthermore, the opportunities, challenges, and opportunities are not backed-up by any data or hardly based on a comparison with other methods. This feels more like a motivation for developing WoZ++ and the dreams of the authors how it should work, rather than a scientifically solid evaluation or validation of their actual system. These items feel out of place in the discussion at the moment.
+
+The reviewer urges the authors to be careful in presenting their work in this fashion, because it is not very scientific.
+
+* “But robots in the real world […] own personal needs” -> No evidence is provided that WoZ++ actually solve this problem necessarily. It's a matter of which approach learns the best policies (the quickest) to behave appropriately and to be adaptive. The WoZ++ approach is not the only approach, and might not be the best approach.
+
+* “[…] robot assistance […] the first demonstration or request […]” -> if you would introduce ‘empty’ robots yes. But is this the safest approach? And again, the authors nowhere show that WoZ++ can do one-shot learning.
+
+* “In the education domain […] and in more applications” -> this text is out of place here. It would better fit in the introduction.
+
+* “[…] WoZ+= provides a system […] from one to another.” -> where do you show this?
+* “[…] these biases can [be] observed in future […]”
+* “First it does not require the […] for each study” -> But it does though. The behaviors, that a wizard or the WoZ++ system can select, need to be preprogramed. Furthermore, in your method you explicitly describe that these action need to be mapped in the system. This is not something a non-programmer can do.”
+* “This specifically is […] teaching the robot -> this part is unclear. Where does ‘this’ refer to?
+* “This joins comments […] questions for HRI” -> This section and the previous one are unclear. Again where does ‘this’ to. I completely lost you as a reader.
+* “Additionally, by limiting […] validity of HRI research” -> How is this different from regular WoZ++?
+* “axe of research” -> what is the axe of research?
+
+* Regarding the Wizard interface. Designing a proper GUI is indeed a design challenge, but is it an HRI challenge? A more interesting matter for me is the inherent difference between the robot's perception and the wizard's perception. Reducing the perception of the wizard may result in suboptimal decision making, but not doing it makes it difficult to really link the robot perceptions to the action selection. This is a trade-off that is mediated by the meta-information exchange. A feature that I like in the WoZ++ system. This could be discussed more concretely.
+
+* widely different from human ones (microsecond vs seconds) -> humans also make decisions in terms of microsecond.
+* “so the communication between […] constrains of the interaction.” -> you did an experiment. Why aren’t you looking at the data to say something about this?
+* it is unclear for me where the recommendations come from. Furthermore, table III speaks of requirements as well. Table III is not discussed and it is unclear what the content is about.
+
+V. Conclusion
+* “End-users” -> the end-users are the ones using the robot, right?
+* “bi-directional communication, WoZ++” -> in this paper little information is provided about the actual content of that communication.
+* “(25 demonstrations sessions […] each)” -> this is new information about the study. No new information should be presented in the conclusion.
+* “It eventually […] the human one” -> this claim not convincingly presented and supported in this paper.
+* “stucked” -> stuck
+
+5. Recommendation
+Although the ideas and approach presented in this paper are interesting and could be a valuable contribution to the HRI community, this reviewer believes the paper is in a too early state to be published at this year’s HRI conference. Although promised, no large-scale study is presented, and a significant number of claims made in this paper are not defended by clear and sound arguments, a systematic data collection strategy, supporting data, and/or a thorough reflective analysis of the research with respect to the existing state of the art.
+
+POST REBUTTAL UPDATE
+The reviewer would like to thank the authors for their clarifications. A number of points are now more clear for the reviewer. Therefore, I have updated my overall rating. However, the proposed changes would change the paper significantly and would take a lot of time to implement correctly. Another review phase would be in order to safeguard the qualify of the submission. As a consequence, this years HRI conference would be too soon for this paper.
+
+The reviewer would like to point out that the ideas listed in this paper are very valuable and encourages the authors to continue their work and submit an improved version for next years HRI conference.
+Overall Rating
+Probably reject: I would argue for rejecting this paper.
+
+-------------------------------------------------------------------------------
+
+Reviewer 3 (reviewer)
+Contribution
++Possibly high impact novel approach
+-Authors should be more modest in their conclusion as the task they tested the method on is simple.
+
+REBUT: The authors indicate they will be more careful with their claims in the final version, and acknowledge the limitations of their work more carefully. As such I will keep my review score as it is (=positive).
+Detailed Review
+This paper present a novel method for transforming WOZ to an autonomous system in a gradually and natural fashion. They call this WOX++. This is an important paper, conceptually at least. I believe this work should be considered high impact as it coins the idea to learn a policy from the experimenter gradually. However, I also think the case study is not convincing. This is not a problem but should be acknowledged by the authors a great deal in the conclusion. The case presents a simple game in which IRL can in fact get away with relatively little samples. If the problem is a real-world interaction such as a robot interacting using multiple senses with children in a class room through a conversation that needs interpretation, then the IRL approach would already fail (because of the state space of the input). So, provided the authors critically assess their own work, this could be an important contribution. I have little other comments, the work is well done well argued for and well executed. I'd like to see a comparison with the originally proposed benefits for WOZ, would these still hold (https://dl.acm.org/citation.cfm?id=169215). For example, the last benefit (the experimenter learning a lot), if you automatize the experimenter, then in fact you do no learn anymore. A bit more discussion is needed on the type of tasks the authors feel this work could be used for. Finally, the explanation of the diff between encouragement and explanation should be better. This is not helping the reader.
+Overall Rating
+Probably accept: I would argue for accepting this paper.
+

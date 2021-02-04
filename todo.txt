@@ -1,0 +1,23 @@
+- clarify role of wizard and user: both experimenter and actual use (in intro)
+- reword large scale study - ecologically valid study
+- highlight the complexity of the task and that it is only !!!one example!!!
+- tone down
+- focus the paper better, explicate a clear deliniated research objective with accompanying test use case
+- clarify progressive autonomy (step out/in and fully autonomous) : if the wizard does switch from a control task towards a monitoring task, how well will the wizard be able to correct the robot
+- clarify why in experiment not restricted perception
+- make reduction of workload speculative (but keep the possibility to deploy autonomously if required)
+- more discussion about the results
+- support opportunities, challenges and recommendation more (from the study/results or literature) + make them unique to WoZ++
+
+R1:
+- most aspects of the full framework are not appropriately addressed in full detail (eg. suited learning algorithms, interface elements, expected effects of experimental design choices, learning as a confound on experiments)
+- choices in learning algorithms, proven benefits of this bidirectional communication, the statement of added transparency due to online learning, shift from wizard control to robot autonomy and how online learning actually reduces the need of developing an effective learning algorithm. Such as the setting of hyper parameters, reward scaling, real-time data cleaning.
+
+
+Clarify role of the study and complexity and importance of having "correct" interaction. - compare to classic HRI studies or case when woz (without open field) is used
+- what if teacher wrong demonstration 
+- what if robot wrong suggestion
+- what if deployed
+- calrify order of step and why it matters: why online learning is important
+
+rework widely the recommendation (and link back to principles)
